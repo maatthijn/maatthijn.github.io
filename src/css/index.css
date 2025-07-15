@@ -1,0 +1,116 @@
+/* Font used: Nunito Sans and Monsieur La Doulaise from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('bootstrap/dist/css/bootstrap.min.css');
+
+#content-blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+html {
+    background-color: #060713;
+    user-select: none;
+}
+
+body {
+    font-family:'Nunito Sans';
+    color: white;
+}
+
+#root {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-root {
+    top: 0;
+    position: absolute;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+.contents {
+    min-height: 80vh !important;
+    padding: 0 15vw;
+}
+/* from Contact.css
+.contents {
+    min-height: 80vh !important;
+    padding: 5vh 15vw 0 15vw;
+}
+
+from Blog.css
+.contents {
+    min-height: 80vh !important;
+    padding: 0 5vw 10vh 5vw;
+}
+
+from Galleries.css
+.contents {
+    min-height: 80vh !important;
+    padding: 5vw 5vw;
+}
+*/
+.content-p {
+    text-align: center;
+}
+
+/*
+.seq-anim-run {
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+*/
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #f4afc2;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, .5);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    body {
+        overflow-x: hidden;
+        font-size: 4vw;
+    }
+
+    .contents {
+        padding: 15vh 8vw 5vh 8vw !important; 
+        font-size: 4vw !important;
+    }
+
+    /* From Contact.css
+    .contents {
+        padding: 5vh 15vw 10vh 15vw;
+    }
+    */
+}
+/*
+@media (max-width: 992px) {
+    #about-content {
+        padding-top: 15vh !important;
+        font-size: 4vw;
+    }
+}
+    */

@@ -1,0 +1,119 @@
+@import url('index.css');
+
+.interaction-blocker {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: transparent;
+  pointer-events: all;
+}
+
+.seq-anim {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.seq-anim-run {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0 !important;
+}
+
+#desktop-nav * {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#desktop-nav *:hover {
+    color: #f4afc2;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, .5);
+}
+
+#desktop-nav {
+    position: fixed;
+    left: 0;
+    background-color: #060713;
+    border-radius: 0;
+    width: 101vw;
+    padding: 3vh 15vw;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(19px);
+    -webkit-backdrop-filter: blur(19px);
+    box-shadow: 
+        inset 0 9px 32px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(0, 0, 0, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+        inset 0 0 42px 21px rgba(0, 0, 0, 0.2),
+        0 50px 35px rgba(0, 0, 0, 0.4);
+}
+
+#desktop-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+}
+
+#desktop-nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+}
+
+#brand {
+    padding: 0 0 0 0;
+    font-family: 'Mrs Saint Delafield';
+    color: #f4afc2;
+    font-size: 3vw !important;
+}
+
+.nav-option {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    text-transform: uppercase;
+    font-family: 'Nunito Sans';
+}
+
+/* Additional for mobile modeling */
+
+#desktop-nav * {
+    text-decoration: none;
+    transition: color .5s, text-shadow .5s;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #f4afc2;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, .5);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    #desktop-nav {
+        display: none;
+    }
+    
+    #brand {
+        font-size: 7.5vw !important;
+    }
+}
