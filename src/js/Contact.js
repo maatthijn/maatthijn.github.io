@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../css/Contact.css"
 
 function Contact() {
@@ -25,29 +26,33 @@ function Contact() {
         });
     }
 
+    useEffect(() => {document.title = "Contact | HAFIDH MAULANA MATIN"});
+
     return (
-        <div id="contact-content" className="page-root contents min-vh-100 min-vw-50 justify-content-center align-items-center d-flex flex-column seq-anim" translate="yes">
-            <p className="content-p seq-anim">
-                Feel free to contact me by filling out a form below!
-            </p>
-            <div className="seq-anim contact-container">
-                <form className="contact-form seq-anim" id="contact-form" onSubmit={contactSubmit}>
-                    <div className="form-content seq-anim">
-                        <label>Name:</label>
-                        <input type="text" name="name" placeholder="Your name" required />
-                    </div>
-                    <div className="form-content seq-anim">
-                        <label>E-mail:</label>
-                        <input type="email" name="email" placeholder="email@example.xyz" required />
-                    </div>
-                    <div className="form-content seq-anim">
-                        <label>Messages:</label>
-                        <textarea name="message" placeholder="Type your message here" rows="6" required autoComplete="off"></textarea>
-                    </div>
-                    <button type="submit" className="seq-anim">Submit</button>
-                </form>
+        <>
+            <div id="contact-content" className="page-root contents min-vh-100 min-vw-50 justify-content-center align-items-center d-flex flex-column seq-anim" translate="yes">
+                <p className="content-p seq-anim">
+                    Feel free to contact me by filling out a form below!
+                </p>
+                <div className="seq-anim contact-container">
+                    <form className="contact-form seq-anim" id="contact-form" onSubmit={contactSubmit}>
+                        <div className="form-content seq-anim">
+                            <label>Name:</label>
+                            <input type="text" name="name" placeholder="Your name" required />
+                        </div>
+                        <div className="form-content seq-anim">
+                            <label>E-mail:</label>
+                            <input type="email" name="email" placeholder="email@example.xyz" required />
+                        </div>
+                        <div className="form-content seq-anim">
+                            <label>Messages:</label>
+                            <textarea name="message" placeholder="Type your message here" rows="6" required autoComplete="off"></textarea>
+                        </div>
+                        <button type="submit" className="seq-anim">Submit</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

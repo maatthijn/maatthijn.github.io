@@ -27,6 +27,7 @@ function Blog() {
     const [selectedBlog, setSelectedBlog] = useState(null);
 
     useEffect(() => {
+        document.title = "Blog | HAFIDH MAULANA MATIN"
         fetch('/blog.json')
             .then((res) => res.json())
             .then((data) => {

@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Portfolio by Matthijn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+I would like to announce that this is my second version of my self-made portfolio. This project mostly emphasizes my skills in web development, including my knowledges and implementations on web building using HTML, webpage styling using CSS, and front-end developing using JavaScript.
 
-In the project directory, you can run:
+Moreover, I use this portfolio to exhibit my other skills, such as my creative sides in photography, photo-editing, and writing. I also let you dive more on myself by looking up to my professional education and work on LinkedIn that is attached on my "About" section.
 
-### `npm start`
+Moving back to the context of coding, this is the upgraded version of my first version website that is still availabe in my GitHub repository. **You can freely check the site in my "Portfolio" repository here: https://github.com/maatthijn/portfolio**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The initial version utilizes a very basic static web development strucutre, which includes static HTMLs, CSS, and simple scripts using JavaScript for each page with their unique behavior. Also, I insert a simple Google Search Console's HTML to track my work in optimizing the search engine when searching on my content. I have updated my initial version several times until `v1.2.3`, which could be the last release for the first generation.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Now, I'm moving on to the second generation, which I name it `v2`. In this version, I'm using latest trend in web development, including using ReactJS in my project. Also, I'm going to level up my portfolio by applying basic back-end for my contents, such as galleries and blogs.
 
-### `npm test`
+**Finally, I would like you to check my latest (and current) portfolio by checking on this site!: https://maatthijn.github.io/**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## What's New?
 
-### `npm run build`
+### v2.0
+1. Implemented ReactJS on my website, as well as configuring the initial version to work on the current environment.
+2. Created a PWA (Progressive Web App) for my website. React automatically turned on PWA configuration, so I keep it.
+3. Automatically applied galleries to three columns structures in "Gallery" section. However, I'm still working on how to automatically applied all photos in a directory. Might be using back-end?
+4. Added animations when changing pages.
+5. Applied search engine optimizer (SEO) on the landing page.
+6. Optimized the webpage for mobile users.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Logs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### v1.2.3
+1. Updated my icon and HTML meta icon because it won't appear on search engine.
+2. Fixed paddings on desktop navbar.
+3. Added a canonical URL.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### v1.2.2
+So many updates that I've implemented on the HTML files for search engine optimization.
 
-### `npm run eject`
+1. Updated all HTML files to optimize Google search engine, hopefully...
+2. Updated all typos in file addressses, such as my meta open graph's picture directory.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### v1.2.1
+1. Added a file for Google Search Console verification.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### v1.2
+1. Fixed close button in mobile menu that appeared too small (for no reason, I excluded the close button span element).
+2. Fixed naming on my JSON files that broke blog's sorting mechanism (I typed a wrong datetime format).
+3. Added form on the "Contact" section.
+4. Converted all images into .webp extension.
+5. Enabled SEO for my portfolio (I'm not sure this will work).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### v1.1
+1. Enables responsive webpages for mobile users.
+2. Translates all blogs into English.
+3. Sets auto-translation by Google Translate API exclusively for the contents (everything except navbar and its options).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2025 Hafidh Maulana Matin

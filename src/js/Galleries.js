@@ -32,30 +32,6 @@ export default function Galleries() {
         }, 600);
     };
 
-    /*
-    const images = [
-        "/galleries/image (1).webp",
-        "/galleries/image (2).webp",
-        "/galleries/image (3).webp",
-        "/galleries/image (4).webp",
-        "/galleries/image (5).webp",
-        "/galleries/image (6).webp",
-        "/galleries/image (7).webp",
-        "/galleries/image (8).webp",
-        "/galleries/image (9).webp",
-        "/galleries/image (10).webp",
-        "/galleries/image (11).webp",
-        "/galleries/image (12).webp",
-        "/galleries/image (13).webp",
-        "/galleries/image (14).webp",
-        "/galleries/image (15).webp",
-        "/galleries/image (16).webp",
-        "/galleries/image (17).webp",
-        "/galleries/image (18).webp",
-        "/galleries/image (19).webp",
-    ];
-    */
-
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -81,6 +57,7 @@ export default function Galleries() {
     }, []);
 
     useEffect(() => {
+        document.title = "Galleries | HAFIDH MAULANA MATIN"
         if (modalVisible) {
             document.documentElement.style.overflow = "hidden";
             document.documentElement.style.paddingRight = "15px";
@@ -136,7 +113,7 @@ export default function Galleries() {
             {modalVisible && (
                 <div
                     ref={modalRef}
-                    className={`modal custom-modal ${isFadingOut ? "fade-out-galleries" : isFadeInActive? "fade-in-galleries" : ""}`}
+                    className={`modal custom-modal ${isFadingOut ? "fade-out-galleries" : isFadeInActive ? "fade-in-galleries" : ""}`}
                 >
                     <span className="close" id="image-close" onClick={closeModal}>
                         &times;
