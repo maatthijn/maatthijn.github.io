@@ -96,7 +96,7 @@ export default function Galleries() {
                                 key={index}
                                 src={src}
                                 alt={`img-${index}`}
-                                loading="eager"
+                                loading="lazy"
                                 className="shadow-1-strong rounded mb-4 img-image"
                                 style={{
                                     pointerEvents: disableClicks ? "none" : "auto",
