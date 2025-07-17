@@ -16,6 +16,12 @@ Now, I'm moving on to the second generation, which I name it `v2`. In this versi
 
 ## What's New?
 
+### v2.1
+1. Optimized repository by removing unused modules.
+2. Optimized "Galleries" page loading by reducing images size.
+
+## Logs
+
 ### v2.0
 1. Implemented ReactJS on my website, as well as configuring the initial version to work on the current environment.
 2. Created a PWA (Progressive Web App) for my website. React automatically turned on PWA configuration, so I keep it.
@@ -23,8 +29,6 @@ Now, I'm moving on to the second generation, which I name it `v2`. In this versi
 4. Added animations when changing pages.
 5. Applied search engine optimizer (SEO) on the landing page.
 6. Optimized the webpage for mobile users.
-
-## Logs
 
 ### v1.2.3
 1. Updated my icon and HTML meta icon because it won't appear on search engine.
