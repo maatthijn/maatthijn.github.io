@@ -19,6 +19,7 @@ Now, I'm moving on to the second generation, which I name it `v2`. In this versi
 ### v2.1
 1. Optimized repository by removing unused modules.
 2. Optimized "Galleries" page loading by reducing images size.
+3. Omitted some codes that produced error in web console.
 
 ## Logs
 
