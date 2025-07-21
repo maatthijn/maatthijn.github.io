@@ -28,7 +28,7 @@ function Blog() {
 
     useEffect(() => {
         document.title = "Blog | HAFIDH MAULANA MATIN"
-        fetch('/blog.json')
+        fetch('https://backend-one-cyan.vercel.app/api/blogs')
             .then((res) => res.json())
             .then((data) => {
                 const sorted = sortBlogsByDate(data);

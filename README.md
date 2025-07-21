@@ -16,12 +16,15 @@ Now, I'm moving on to the second generation, which I name it `v2`. In this versi
 
 ## What's New?
 
+### v2.2
+1. Connected my blogs from MongoDB database by a simple API program.
+
+## Logs
+
 ### v2.1
 1. Optimized repository by removing unused modules.
 2. Optimized "Galleries" page loading by reducing images size.
 3. Omitted some codes that produced error in web console.
-
-## Logs
 
 ### v2.0
 1. Implemented ReactJS on my website, as well as configuring the initial version to work on the current environment.
