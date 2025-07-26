@@ -59,7 +59,7 @@ export default function Galleries() {
     //    }, [images]);
 
     useEffect(() => {
-        if (images.length === 0) return;
+        if (isLoading || images.length === 0) return;
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -73,18 +73,17 @@ export default function Galleries() {
             { threshold: 0.1 }
         );
 
+        // Delay to allow React to render the DOM
         const timeout = setTimeout(() => {
             const targets = document.querySelectorAll(".img-image");
-            targets.forEach((img) => {
-                observer.observe(img);
-            });
-        }, 300); // Give DOM time to hydrate
+            targets.forEach((img) => observer.observe(img));
+        }, 100); // You can increase to 300ms if needed
 
         return () => {
             clearTimeout(timeout);
             observer.disconnect();
         };
-    }, [images]);
+    }, [isLoading, images]);
 
 
     useEffect(() => {
