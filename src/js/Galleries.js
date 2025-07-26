@@ -73,13 +73,16 @@ export default function Galleries() {
             { threshold: 0.1 }
         );
 
-        const timeout = setTimeout(() => {
-            const targets = document.querySelectorAll(".img-image");
-            targets.forEach((img) => observer.observe(img));
-        }, 100); // Small delay to ensure images are fully mounted
+        // Let browser finish rendering images first
+        const raf = requestAnimationFrame(() => {
+            setTimeout(() => {
+                const targets = document.querySelectorAll(".img-image");
+                targets.forEach((img) => observer.observe(img));
+            }, 0);
+        });
 
         return () => {
-            clearTimeout(timeout);
+            cancelAnimationFrame(raf);
             observer.disconnect();
         };
     }, [images]);
