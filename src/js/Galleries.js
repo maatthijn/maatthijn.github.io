@@ -35,29 +35,6 @@ export default function Galleries() {
         }, 600);
     };
 
-    //    useEffect(() => {
-    //        if (images.length === 0) return;
-    //
-    //        const observer = new IntersectionObserver(
-    //            (entries) => {
-    //                entries.forEach((entry) => {
-    //                    if (entry.isIntersecting) {
-    //                        entry.target.classList.add("visible");
-    //                        observer.unobserve(entry.target);
-    //                    }
-    //                });
-    //            },
-    //            { threshold: 0.1 }
-    //        );
-    //
-    //        const targets = document.querySelectorAll(".img-image");
-    //        targets.forEach((img) => observer.observe(img));
-    //
-    //        return () => {
-    //            observer.disconnect();
-    //        };
-    //    }, [images]);
-
     useEffect(() => {
         if (images.length === 0) return;
 
@@ -73,20 +50,42 @@ export default function Galleries() {
             { threshold: 0.1 }
         );
 
-        // Let browser finish rendering images first
-        const raf = requestAnimationFrame(() => {
-            setTimeout(() => {
-                const targets = document.querySelectorAll(".img-image");
-                targets.forEach((img) => observer.observe(img));
-            }, 0);
-        });
+        const targets = document.querySelectorAll(".img-image");
+        targets.forEach((img) => observer.observe(img));
 
         return () => {
-            cancelAnimationFrame(raf);
             observer.disconnect();
         };
     }, [images]);
 
+//    useEffect(() => {
+//        if (images.length === 0) return;
+//
+//        const observer = new IntersectionObserver(
+//            (entries) => {
+//                entries.forEach((entry) => {
+//                    if (entry.isIntersecting) {
+//                        entry.target.classList.add("visible");
+//                        observer.unobserve(entry.target);
+//                    }
+//                });
+//            },
+//            { threshold: 0.1 }
+//        );
+//
+//        // Let browser finish rendering images first
+//        const raf = requestAnimationFrame(() => {
+//            setTimeout(() => {
+//                const targets = document.querySelectorAll(".img-image");
+//                targets.forEach((img) => observer.observe(img));
+//            }, 0);
+//        });
+//
+//        return () => {
+//            cancelAnimationFrame(raf);
+//            observer.disconnect();
+//        };
+//    }, [images]);
 
     useEffect(() => {
         const fetchImages = async () => {
