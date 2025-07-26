@@ -73,38 +73,19 @@ export default function Galleries() {
             { threshold: 0.1 }
         );
 
-        // Ensures DOM is ready
-        const raf = requestAnimationFrame(() => {
+        const timeout = setTimeout(() => {
             const targets = document.querySelectorAll(".img-image");
-            const unobserved = [];
-
-            // Wait until all images are loaded
             targets.forEach((img) => {
-                if (img.complete) {
-                    observer.observe(img);
-                } else {
-                    unobserved.push(img);
-                }
-
-                if (unobserved.length === 0) return;
-
-                let loadedCount = 0;
-                unobserved.forEach((img) => {
-                    img.addEventListener("load", () => {
-                        loadedCount++;
-                        if (loadedCount === unobserved.length) {
-                            unobserved.forEach((img) => observer.observe(img));
-                        }
-                    });
-                });
+                observer.observe(img);
             });
-        });
+        }, 300); // Give DOM time to hydrate
 
         return () => {
-            cancelAnimationFrame(raf);
+            clearTimeout(timeout);
             observer.disconnect();
         };
     }, [images]);
+
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -187,7 +168,6 @@ export default function Galleries() {
                                         key={index}
                                         src={image.url}
                                         alt={image.name || `img-${index}`}
-                                        loading="lazy"
                                         className="shadow-1-strong rounded mb-4 img-image"
                                         style={{
                                             pointerEvents: disableClicks ? "none" : "auto",

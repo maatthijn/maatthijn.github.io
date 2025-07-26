@@ -1,12 +1,17 @@
 import { Link, useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { useLoading } from "./contexts/LoadingContext";
 
 import "../css/About.css";
 
 function About() {
+    const { setIsLoading } = useLoading();
     const { handleNavClick } = useOutletContext();
-    useEffect(() => {document.title = "About | HAFIDH MAULANA MATIN"});
+    useEffect(() => {
+        document.title = "About | HAFIDH MAULANA MATIN";
+        setIsLoading(false);
+    }, [setIsLoading]);
 
     return (
         <>

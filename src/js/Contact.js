@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import "../css/Contact.css"
+import { useLoading } from "./contexts/LoadingContext";
 
 function Contact() {
+    const { setIsLoading } = useLoading();
     const contactSubmit = (e) => {
         e.preventDefault(); // Prevent page reload
 
@@ -26,7 +28,10 @@ function Contact() {
         });
     }
 
-    useEffect(() => {document.title = "Contact | HAFIDH MAULANA MATIN"});
+    useEffect(() => {
+        document.title = "Contact | HAFIDH MAULANA MATIN";
+        setIsLoading(false);
+    }, [setIsLoading]);
 
     return (
         <>
