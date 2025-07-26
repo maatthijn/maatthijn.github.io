@@ -2,6 +2,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import url('bootstrap/dist/css/bootstrap.min.css');
 
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    gap: 10px;
+    z-index: 100000 !important;
+    background-color: #060713;
+}
+
+.text-stroke-anim {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.animated-letter {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: strokeDrawReverse 2.4s ease-in-out infinite;
+  animation-fill-mode: both;
+  fill: none;
+}
+
+/* Delay for each letter */
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+
+.responsive-text {
+  font-size: 32px;
+}
+
+@media (max-width: 992px) {
+  .responsive-text {
+    font-size: 64px;
+  }
+
+  .animated-letter {
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    /* Fix animation for mobile too */
+    animation: strokeDrawReverseMobile 2.4s ease-in-out infinite;
+    animation-fill-mode: both;
+  }
+
+    .delay-0 { animation-delay: 0s; }
+    .delay-1 { animation-delay: 0.11s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.33s; }
+    .delay-4 { animation-delay: 0.44s; }
+    .delay-5 { animation-delay: 0.55s; }
+    .delay-6 { animation-delay: 0.66s; }
+    .delay-7 { animation-delay: 0.77s; }
+}
+
+/* Desktop Animation */
+@keyframes strokeDrawReverse {
+    0% {
+        stroke-dashoffset: 300;
+    }
+
+    20% {
+        stroke-dashoffset: 0;
+    }
+
+    40% {
+        stroke-dashoffset: 0;
+    }
+
+    60% {
+        stroke-dashoffset: 300;
+    }
+
+    80% {
+        stroke-dashoffset: 300;
+    }
+
+    100% {
+        stroke-dashoffset: 300;
+    }
+}
+
+/* Mobile Animation */
+@keyframes strokeDrawReverseMobile {
+    0% {
+        stroke-dashoffset: 550;
+    }
+
+    20% {
+        stroke-dashoffset: 0;
+    }
+
+    40% {
+        stroke-dashoffset: 0;
+    }
+
+    60% {
+        stroke-dashoffset: 550;
+    }
+
+    80% {
+        stroke-dashoffset: 550;
+    }
+
+    100% {
+        stroke-dashoffset: 550;
+    }
+}
+
 #content-blocker {
     position: fixed;
     top: 0;
@@ -19,7 +136,7 @@ html {
 }
 
 body {
-    font-family:'Nunito Sans';
+    font-family: 'Nunito Sans';
     color: white;
 }
 
@@ -42,6 +159,7 @@ body {
     min-height: 80vh !important;
     padding: 0 15vw;
 }
+
 /* from Contact.css
 .contents {
     min-height: 80vh !important;
@@ -82,7 +200,8 @@ from Galleries.css
     transition: 0.3s;
 }
 
-.close:hover, .close:focus {
+.close:hover,
+.close:focus {
     color: #f4afc2;
     text-shadow: 0px 0px 5px rgba(255, 255, 255, .5);
     text-decoration: none;
@@ -96,7 +215,7 @@ from Galleries.css
     }
 
     .contents {
-        padding: 15vh 8vw 5vh 8vw !important; 
+        padding: 15vh 8vw 5vh 8vw !important;
         font-size: 4vw !important;
     }
 
@@ -106,6 +225,7 @@ from Galleries.css
     }
     */
 }
+
 /*
 @media (max-width: 992px) {
     #about-content {

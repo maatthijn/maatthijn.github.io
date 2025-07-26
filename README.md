@@ -16,10 +16,16 @@ Now, I'm moving on to the second generation, which I name it `v2`. In this versi
 
 ## What's New?
 
-### v2.2
-1. Connected my blogs from MongoDB database by a simple API program.
+### v2.3
+1. Connected my galleries from Cloudinary and MongoDB database by a simple API program.
+2. Added loading screen while client is calling contents from the server.
+3. Fixed estimated reading time in "Blog" section so it won't show you "0 min reading time".
+4. Only showed published blogs and galleries.
 
 ## Logs
+
+### v2.2
+1. Connected my blogs from MongoDB database by a simple API program.
 
 ### v2.1
 1. Optimized repository by removing unused modules.

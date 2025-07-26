@@ -5,7 +5,9 @@ import "../css/Home.css";
 
 function Home() {
     const { handleNavClick } = useOutletContext();
-    useEffect(() => {document.title = "HAFIDH MAULANA MATIN"});
+    useEffect(() => {
+        document.title = "HAFIDH MAULANA MATIN";
+    });
 
     return (
         <>

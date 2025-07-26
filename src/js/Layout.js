@@ -2,8 +2,10 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import MobileNavbar from "./MobileNavbar";
+import { useLoading } from "./contexts/LoadingContext";
 
 export default function Layout() {
+    const { isLoading } = useLoading();
     const location = useLocation();
     const navigate = useNavigate();
     const [isAnimating, setIsAnimating] = useState(false);
@@ -60,8 +62,12 @@ export default function Layout() {
 
     return (
         <>
-            <Navbar handleNavClick={handleNavClick} />
-            <MobileNavbar handleNavClick={handleNavClick} />
+            {!isLoading &&
+                <>
+                    <Navbar handleNavClick={handleNavClick} />
+                    <MobileNavbar handleNavClick={handleNavClick} />
+                </>
+            }
             {isAnimating && <div className="interaction-blocker"></div>}
             <Outlet context={{ handleNavClick }} />
         </>
