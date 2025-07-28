@@ -2,14 +2,14 @@
 
 #about-content {
     padding-top: 15vh;
-    background-image: url('../assets/bg_2.png');
+    background-image: url('../assets/bg_3.png');
     font-size: 1.25rem;
     min-height: 100vh !important;
 }
 
 .content-nav *,
 .icon-nav * {
-    color: #f4afc2 !important;
+    color: #eaeaea !important;
     font-family: 'Mrs Saint Delafield';
     text-decoration: none;
     transition: color .5s, text-shadow .5s;
@@ -18,7 +18,7 @@
 
 .content-nav *:hover,
 .icon-nav *:hover {
-    color: #f4afc2;
+    color: #3B0A65 !important;
     text-shadow: 0px 0px 5px rgba(255, 255, 255, .5);
 }
 
@@ -32,7 +32,7 @@
 }
 
 .pinky {
-    color: #f4afc2;
+    color: #1A237E;
 }
 
 .about-p {

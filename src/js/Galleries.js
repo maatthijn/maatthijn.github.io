@@ -156,9 +156,9 @@ export default function Galleries() {
                         ref={bodyRef}
                         style={{ paddingRight: modalVisible ? totalPadding : "5vw" }}
                     >
-                        <h1 className="display-4 text-uppercase seq-anim">Galleries</h1>
-                        <p id="galleries-main-desc" className=" seq-anim">
-                            Here you can view all of my best works. Enjoy my photographies!
+                        <h1 className="display-4 text-uppercase seq-anim content-p">Galleries</h1>
+                        <p id="galleries-main-desc" className=" seq-anim content-p">
+                            Here you can view all of my best works. Click on an image to show it in full screen.<br/>Enjoy my photographies!
                         </p>
                         <div className="masonry seq-anim">
                             {images.map((image, index) => (

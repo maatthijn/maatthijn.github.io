@@ -27,7 +27,7 @@
 }
 
 #desktop-nav *:hover {
-    color: #f4afc2;
+    color: #FFCCBC;
     text-shadow: 0px 0px 5px rgba(255, 255, 255, .5);
 }
 
@@ -38,7 +38,7 @@
     border-radius: 0;
     width: 101vw;
     padding: 3vh 15vw;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(19px);
     -webkit-backdrop-filter: blur(19px);
     box-shadow: 
@@ -46,7 +46,7 @@
         inset 0 1px 0 rgba(0, 0, 0, 0.5),
         inset 0 -1px 0 rgba(0, 0, 0, 0.2),
         inset 0 0 42px 21px rgba(0, 0, 0, 0.2),
-        0 50px 35px rgba(0, 0, 0, 0.4);
+        0 50px 35px rgba(0, 0, 0, 0.3);
 }
 
 #desktop-nav::before {
@@ -70,7 +70,7 @@
 #brand {
     padding: 0 0 0 0;
     font-family: 'Mrs Saint Delafield';
-    color: #f4afc2;
+    color: #FFCCBC;
     font-size: 3vw !important;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .close:hover, .close:focus {
-    color: #f4afc2;
+    color: #FFCCBC;
     text-shadow: 0px 0px 5px rgba(255, 255, 255, .5);
     text-decoration: none;
     cursor: pointer;

@@ -2,7 +2,7 @@
 
 #blog-content {
     padding-top: 18vh;
-    background-image: url('../assets/bg_5.png');
+    background-image: url('../assets/bg_3.png');
     font-size: 1.25rem;
     min-height: 100vh !important;
 }
@@ -13,15 +13,15 @@
 
 /* For Blogging */
 .blog-table {
-    --bs-table-color: #d5d5d5;
-    --bs-table-striped-color: #ffffff;
-    --bs-table-bg: rgb(255, 255, 255, 0);
-    --bs-table-striped-bg: rgb(255, 255, 255, .1);
+    --bs-table-color: #eaeaea;
+    --bs-table-striped-color: #e0e0e0;
+    --bs-table-bg: rgba(255, 204, 188, 0.3);
+    --bs-table-striped-bg: rgb(255, 255, 255, .2);
 }
 
 .blog-table-title:hover {
     cursor: pointer;
-    color: #f4afc2;
+    color: #3B0A65;
     text-shadow: 0px 0px 5px rgba(255, 255, 255, .5);
 }
 
@@ -46,20 +46,20 @@
 .blog-offcanvas-header {
     display: block;
     padding: 2rem 5rem 0 3rem;
-    color: #ffffff;
+    color: #eaeaea;
 }
 
 #blog-title {
     font-family: 'Mrs Saint Delafield';
     letter-spacing: 0;
-    color: #f4afc2;
+    color: #FFCCBC;
     font-size: 2.5rem;
 }
 
 
 .blog-offcanvas-body {
     padding: 1rem 5rem 1rem 3rem;
-    color: #ffffff;
+    color: #eaeaea;
     font-size: 1.25rem;
 }
 

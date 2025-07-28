@@ -92,8 +92,11 @@ function Blog() {
             ) : (
                 <div key="blog-loaded">
                     <div id="blog-content" className="page-root contents min-vh-100 min-vw-50 justify-content-center align-items-center d-flex flex-column seq-anim" translate="yes">
-                        <h1 id="blog-main-title" className="display-4 text-uppercase seq-anim">Blog</h1>
-                        <p id="blog-main-desc" className="seq-anim">I usually interesting topics, such as football, politic, or something random. Enjoy my writings!</p>
+                        <h1 id="blog-main-title" className="display-4 text-uppercase seq-anim content-p">Blog</h1>
+                        <p id="blog-main-desc" className="seq-anim content-p">
+                            I usually interesting topics, such as football, politic, or something random. Click on a blog title to discover my blog. <br/>
+                            Enjoy my writings!
+                            </p>
                         <div className="seq-anim">
                             <div>
                                 <Table striped className="blog-table">
@@ -154,7 +157,7 @@ function Blog() {
                                 <hr />
                                 <span className="close" data-bs-dismiss="offcanvas" onClick={handleClose}>&times;</span>
                             </Offcanvas.Header>
-                            <Offcanvas.Body className="blog-offcanvas-body" onScroll={() => window.scrollTo(0, 0)}>
+                            <Offcanvas.Body className="blog-offcanvas-body">
                                 <div id="blog-para">
                                     {selectedBlog.paragraphs.map((p, i) => (
                                         <p key={i}>{p}</p>

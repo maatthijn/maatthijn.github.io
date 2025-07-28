@@ -8,14 +8,16 @@ function Contact() {
         e.preventDefault(); // Prevent page reload
 
         const form = e.target;
-        const formData = new FormData(form);
+        const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value
+        }
 
-        fetch("https://formspree.io/f/xqaboogp", {
+        fetch("https://backend-one-cyan.vercel.app/api/contact", {
             method: "POST",
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
+            body: JSON.stringify(formData),
+            headers: { "Content-Type": "application/json" },
         }).then(response => {
             if (response.ok) {
                 alert("Your message has been sent!");
