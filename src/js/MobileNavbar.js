@@ -1,20 +1,39 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "../css/MobileNavbar.css";
 
 function MobileNavbar({ handleNavClick }) {
+    const enterSound = useRef(null);
+    const exitSound = useRef(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [modalVisible, setModalVisible] = useState(false);
     const location = useLocation();
     const isHomePage = location.pathname === "/";
 
+    useEffect(() => {
+        const enterAudio = new Audio("/enter.wav");
+        enterAudio.preload = "auto";
+        enterSound.current = enterAudio;
+        const exitAudio = new Audio("/exit.wav");
+        exitAudio.preload = "auto";
+        exitSound.current = exitAudio;
+    })
+
     const toggleMenu = () => {
+        if (enterSound.current) {
+            enterSound.current.currentTime = 0;
+            enterSound.current.play().catch(err => console.log("Sound error: ", err));
+        }
         setIsMenuOpen(true);
         setModalVisible(true);
         document.documentElement.style.overflow = "hidden";
     };
 
     const closeMenu = () => {
+        if (exitSound.current) {
+            exitSound.current.currentTime = 0;
+            exitSound.current.play().catch(err => console.log("Sound error: ", err));
+        }
         setModalVisible(false);
         document.documentElement.style.overflow = "";
         setTimeout(() => {
