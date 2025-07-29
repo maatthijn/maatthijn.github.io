@@ -10,8 +10,16 @@ export default function Layout() {
     const navigate = useNavigate();
     const [isAnimating, setIsAnimating] = useState(false);
     const prevPathRef = useRef(location.pathname);
+    const clickSound = useRef(null);
+    const errorSound = useRef(null);
 
     useEffect(() => {
+        const clickAudio = new Audio("/click.wav");
+        const errorAudio = new Audio("/error.wav");
+        clickAudio.preload = "auto";
+        errorAudio.preload = "auto";
+        clickSound.current = clickAudio;
+        errorSound.current = errorAudio;
         const elements = document.querySelectorAll(".seq-anim");
         setIsAnimating(true);
 
@@ -39,7 +47,17 @@ export default function Layout() {
 
     const handleNavClick = async (e, to) => {
         e.preventDefault();
-        if (isAnimating || location.pathname === to) return;
+        if (isAnimating || location.pathname === to) {
+            if (errorSound.current) {
+                errorSound.current.currentTime = 0;
+                errorSound.current.play().catch(err => console.log("Sound error: ", err));
+            }
+            return
+        };
+        if (clickSound.current) {
+            clickSound.current.currentTime = 0;
+            clickSound.current.play().catch(err => console.log("Sound error: ", err));
+        }
         setIsAnimating(true);
 
         const fromHome = location.pathname === "/";

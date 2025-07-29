@@ -20,6 +20,7 @@ Now, I'm moving on to the second generation, which I name it `v2`. In this versi
 1. Changed email service API by using self-made API instead of Formspree.
 2. Improved contents instructions for easier usage.
 3. Changed the colors for more vibrant feelings.
+4. Added sound effects for every click.
 
 ## Logs
 

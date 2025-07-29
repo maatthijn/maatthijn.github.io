@@ -19,7 +19,7 @@ function About() {
                 <p className="about-p seq-anim">
                     Hi! I'm <span className="pinky">Hafidh</span>, a multidisciplinary creator with a passion for building things — from
                     intuitive websites to beautiful photographs. I'm currently diving deep into <span className="pinky">web
-                        development, book writer, data analysis, and photography</span>. With a background in <span className="pinky">microbiology</span>, I bring
+                    development, book writer, data analysis, and photography</span>. With a background in <span className="pinky">microbiology</span>, I bring
                     a unique mix of analytical thinking and creative vision to everything I do.
                 </p>
                 <p className="about-p seq-anim">

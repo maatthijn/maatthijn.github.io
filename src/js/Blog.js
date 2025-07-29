@@ -1,12 +1,14 @@
 import "../css/Blog.css";
 import Table from 'react-bootstrap/Table';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import dayjs from "dayjs";
 import { useLoading } from "./contexts/LoadingContext";
 import LoadingScreen from "./LoadingScreen";
 
 function Blog() {
+    const enterSound = useRef(null);
+    const exitSound = useRef(null);
     const { isLoading, setIsLoading } = useLoading();
     function estimateReadingTime(paragraphs) {
         const text = paragraphs.join(" ");
@@ -31,6 +33,13 @@ function Blog() {
 
     useEffect(() => {
         document.title = "Blog | HAFIDH MAULANA MATIN"
+        const enterAudio = new Audio("/enter.wav");
+        enterAudio.preload = "auto";
+        enterSound.current = enterAudio;
+        const exitAudio = new Audio("/exit.wav");
+        exitAudio.preload = "auto";
+        exitSound.current = exitAudio;
+
         function delay(ms) {
             return new Promise((resolve) => setTimeout(resolve, ms));
         }
@@ -75,10 +84,18 @@ function Blog() {
     const [shouldRender, setShouldRender] = useState(false);
 
     const handleShow = () => {
+        if (enterSound.current) {
+            enterSound.current.currentTime = 0;
+            enterSound.current.play().catch(err => console.log("Sound error: ", err));
+        }
         setShouldRender(true);
         setTimeout(() => setShow(true), 10)
     };
     const handleClose = () => {
+        if (exitSound.current) {
+            exitSound.current.currentTime = 0;
+            exitSound.current.play().catch(err => console.log("Sound error: ", err));
+        }
         setShow(false)
         setTimeout(() => setShouldRender(false), 800);
     };
@@ -94,9 +111,9 @@ function Blog() {
                     <div id="blog-content" className="page-root contents min-vh-100 min-vw-50 justify-content-center align-items-center d-flex flex-column seq-anim" translate="yes">
                         <h1 id="blog-main-title" className="display-4 text-uppercase seq-anim content-p">Blog</h1>
                         <p id="blog-main-desc" className="seq-anim content-p">
-                            I usually interesting topics, such as football, politic, or something random. Click on a blog title to discover my blog. <br/>
+                            I usually interesting topics, such as football, politic, or something random. Click on a blog title to discover my blog. <br />
                             Enjoy my writings!
-                            </p>
+                        </p>
                         <div className="seq-anim">
                             <div>
                                 <Table striped className="blog-table">

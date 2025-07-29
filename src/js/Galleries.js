@@ -4,6 +4,8 @@ import { useLoading } from "./contexts/LoadingContext";
 import LoadingScreen from "./LoadingScreen";
 
 export default function Galleries() {
+    const enterSound = useRef(null);
+    const exitSound = useRef(null);
     const { isLoading, setIsLoading } = useLoading();
     const [isFadingOut, setIsFadingOut] = useState(false);
     const [isFadeInActive, setIsFadeInActive] = useState(false);
@@ -14,26 +16,6 @@ export default function Galleries() {
     const [disableClicks, setDisableClicks] = useState(false);
     const modalRef = useRef(null);
     const bodyRef = useRef(null);
-
-    const handleImageClick = (src) => {
-        setModalImageSrc(src);
-        setModalVisible(true);
-        setDisableClicks(true);
-        setIsFadingOut(false);
-
-        setTimeout(() => {
-            setIsFadeInActive(true);
-        }, 1);
-    };
-
-    const closeModal = () => {
-        setIsFadingOut(true);
-        setIsFadeInActive(false);
-        setTimeout(() => {
-            setModalVisible(false);
-            setDisableClicks(false);
-        }, 600);
-    };
 
     //    useEffect(() => {
     //        if (images.length === 0) return;
@@ -59,6 +41,12 @@ export default function Galleries() {
     //    }, [images]);
 
     useEffect(() => {
+        const enterAudio = new Audio("/enter.wav");
+        enterAudio.preload = "auto";
+        enterSound.current = enterAudio;
+        const exitAudio = new Audio("/exit.wav");
+        exitAudio.preload = "auto";
+        exitSound.current = exitAudio;
         if (isLoading || images.length === 0) return;
 
         const observer = new IntersectionObserver(
@@ -85,6 +73,33 @@ export default function Galleries() {
         };
     }, [isLoading, images]);
 
+    const handleImageClick = (src) => {
+        if (enterSound.current) {
+            enterSound.current.currentTime = 0;
+            enterSound.current.play().catch(err => console.log("Sound error: ", err));
+        }
+        setModalImageSrc(src);
+        setModalVisible(true);
+        setDisableClicks(true);
+        setIsFadingOut(false);
+
+        setTimeout(() => {
+            setIsFadeInActive(true);
+        }, 1);
+    };
+
+    const closeModal = () => {
+        if (exitSound.current) {
+            exitSound.current.currentTime = 0;
+            exitSound.current.play().catch(err => console.log("Sound error: ", err));
+        }
+        setIsFadingOut(true);
+        setIsFadeInActive(false);
+        setTimeout(() => {
+            setModalVisible(false);
+            setDisableClicks(false);
+        }, 600);
+    };
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -158,7 +173,7 @@ export default function Galleries() {
                     >
                         <h1 className="display-4 text-uppercase seq-anim content-p">Galleries</h1>
                         <p id="galleries-main-desc" className=" seq-anim content-p">
-                            Here you can view all of my best works. Click on an image to show it in full screen.<br/>Enjoy my photographies!
+                            Here you can view all of my best works. Click on an image to show it in full screen.<br />Enjoy my photographies!
                         </p>
                         <div className="masonry seq-anim">
                             {images.map((image, index) => (
